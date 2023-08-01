@@ -11,11 +11,11 @@ class ToDo {
 
   static List<ToDo> todoList() {
     return [
-      ToDo(id: '01', todoText: 'Morning Excercise', isDone: true ),
+      ToDo(id: '01', todoText: 'Walk 5000 steps', isDone: true ),
       ToDo(id: '03', todoText: 'Check Emails', ),
-      ToDo(id: '04', todoText: 'Team Meeting', ),
-      ToDo(id: '05', todoText: 'Work on mobile apps for 2 hour', ),
-      ToDo(id: '06', todoText: 'Dinner with sister', ),
+      ToDo(id: '04', todoText: 'Reading Book for 30 min', ),
+      ToDo(id: '05', todoText: 'Complate flutter project', ),
+      ToDo(id: '06', todoText: 'Morning Excercise', ),
     ];
   }
 }
