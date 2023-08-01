@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
   final todosList = ToDo.todoList();
   List<ToDo> _foundToDo = [];
   final _todoController = TextEditingController();
-
+  
   @override
   void initState() {
     _foundToDo = todosList;
@@ -23,8 +23,18 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black, //the body background color
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xfff44336), Color(0xff3f51b5)],
+          stops: [0, 1],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+        )
+      ),
+      //----------------------------------------------------------------
+      child: Scaffold( 
+      backgroundColor: Colors.transparent, //the body background color
       //---------------------------------------------------------------
       appBar: _buildApp(), //see the method below
       //------------------------------------------------------------
@@ -130,6 +140,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+    )
     );
   }
 
@@ -178,6 +189,14 @@ class _HomeState extends State<Home> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
+        boxShadow: const [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 0.0),
+                        blurRadius: 10.0,
+                        spreadRadius: 0.0,
+                      ),
+                    ],
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: const TextField(
         decoration: InputDecoration(
@@ -199,14 +218,14 @@ class _HomeState extends State<Home> {
   //----------------------------------------------------------------
   AppBar _buildApp() { // AppBar method
     return AppBar(
-      backgroundColor: Colors.black, // AppBar bcgcolor
+      backgroundColor: Colors.transparent, // AppBar bcgcolor
       elevation: 0, //remove the shadow
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Icon(
             Icons.menu,
-            color: Color(0xFF3A3A3A),
+            color: Colors.white,
             size: 30,
           ),
           SizedBox(
